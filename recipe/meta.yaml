@@ -1,0 +1,56 @@
+{% set name = "prms_streamflow" %}
+{% set version = "0.1" %}
+{% set release = "beta" %}
+{% set build_number = "0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/nhm-usgs/bmi-prms6-streamflow
+  # git_rev: v{{ version }}
+  git_rev: 5770e3c60430cfb7469c12ca388aeb4aab36cfe1
+
+build:
+  # number: {{ build_number }}
+  string: {{ release }}_{{ build_number }}
+
+requirements:
+  build:
+    - cmake
+    - make
+    - {{ compiler('fortran') }}
+    - libnetcdf
+    - netcdf-fortran
+  host:
+    - libnetcdf
+    - netcdf-fortran
+    - coretran
+    - prms
+  run:
+    - libnetcdf
+    - netcdf-fortran
+    - coretran
+    - prms
+
+test:
+  commands:
+    - test -s $PREFIX/lib/libbmiprmsstreamflow$SHLIB_EXT
+    - test -s $PREFIX/include/bmif_2_0.mod
+    - test -s $PREFIX/include/bmiprmsstreamflow.mod
+
+about:
+  home: https://www.usgs.gov/software/precipitation-runoff-modeling-system-prms
+  license: CCO 1.0 Universal
+  license_file: License.md
+  summary: USGS Precipitation Runoff Modeling System (PRMS) Streamflow component
+  description: |
+    The Precipitation-Runoff Modeling System (PRMS) is a
+    deterministic, distributed-parameter, physical process based
+    modeling system developed to evaluate the response of various
+    combinations of climate and land use on streamflow and general
+    watershed hydrology. This version of PRMS has been
+    refactored to use only the streamflow component, and it is
+    equipped with a Basic Model Interface.
+  dev_url: https://github.com/nhm-usgs/bmi-prms6-streamflow
