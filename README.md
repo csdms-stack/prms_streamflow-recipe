@@ -1,7 +1,6 @@
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms_streamflow/badges/version.svg)](https://anaconda.org/csdms-stack/prms_streamflow)
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms_streamflow/badges/platforms.svg)](https://anaconda.org/csdms-stack/prms_streamflow)
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms_streamflow/badges/downloads.svg)](https://anaconda.org/csdms-stack/prms_streamflow)
-[![Build Status](https://travis-ci.org/csdms-stack/prms_streamflow-recipe.svg?branch=master)](https://travis-ci.org/csdms-stack/prms_streamflow-recipe)
 
 # prms_streamflow-recipe
 
@@ -12,7 +11,7 @@ Conda recipe for the USGS PRMS Streamflow component.
 
 Install with:
 
-    $ conda install prms_streamflow -c conda-forge -c csdms-stack
+    $ conda install -c conda-forge -c csdms-stack prms_streamflow
 
 **This repository is used to temporarily build conda binaries for
 prms_streamflow. It will be deprecated once prms_streamflow is
