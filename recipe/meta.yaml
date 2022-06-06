@@ -1,6 +1,6 @@
 {% set name = "prms_streamflow" %}
 {% set version = "0.3" %}
-{% set build_number = "1" %}
+{% set build_number = "2" %}
 {% set development = true %}
 
 package:
@@ -10,7 +10,7 @@ package:
 source:
   git_url: https://github.com/nhm-usgs/bmi-prms6-streamflow
 {%- if development %}
-  git_rev: b7a31b6f3bfb2614b4f1edf1a29eaf4f265532eb
+  git_rev: f670f20e3da156e3b1935cf23245d4c13fd0fbc9
 {%- else %}
   git_rev: v{{ version }}
 {%- endif %}
